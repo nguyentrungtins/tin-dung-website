@@ -2,7 +2,6 @@ import { useRef, useState, useEffect } from "react";
 import FilterIcon from "../../public/svgs/FilterIcon.svg";
 import Image from "next/image";
 import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
-import classname from "classnames";
 interface isShowInterface {
   left: boolean;
   right: boolean;
