@@ -6,6 +6,7 @@ import heartIcon from "../../public/svgs/HeartIcon.svg";
 import Image from "next/image";
 import { BiSearch } from "react-icons/bi";
 import { AiOutlineMenu } from "react-icons/ai";
+import Nhot from "./NavBarSub/Nhot";
 const NavBar = () => {
   return (
     <div>
@@ -18,37 +19,30 @@ const NavBar = () => {
           />
         </span>
         <ul className="hidden lg:flex h-[50%] items-center gap-[3%] lg:flex-1">
-          <li className="flex items-center h-full font-light cursor-pointer group">
+          <li className="flex items-center h-full font-light border-black border-solid cursor-pointer group hover:border-b-[3px] transition-all ease-linear">
             <a className="text-base font-semibold uppercase font-roboto lg:tracking-widest">
               Nhớt
             </a>
-            <div className="cursor-auto opacity-0 invisible absolute left-0 right-0 z-50 top-[100px] pt-5 h-[450px] group-hover:visible group-hover:opacity-100 transition ease-in-out duration-300">
-              <div className="w-full h-full bg-light"></div>
-            </div>
+            <Nhot />
           </li>
-          <li className="flex items-center h-full font-light cursor-pointer group">
+
+          <li className="flex items-center h-full font-light border-black border-solid cursor-pointer group hover:border-b-[3px] transition-all ease-linear">
             <a className="text-base font-semibold uppercase font-roboto lg:tracking-widest">
               Vỏ Ruột
             </a>
-            <div className="cursor-auto opacity-0 invisible absolute left-0 right-0 z-50 top-[100px] pt-5 h-[450px] group-hover:visible group-hover:opacity-100 transition ease-in-out duration-300">
-              <div className="w-full h-full bg-red"></div>
-            </div>
+            <Nhot />
           </li>
-          <li className="flex items-center h-full font-light cursor-pointer group">
+          <li className="flex items-center h-full font-light border-black border-solid cursor-pointer group hover:border-b-[3px] transition-all ease-linear">
             <a className="text-base font-semibold uppercase font-roboto lg:tracking-widest">
               Nhông Sên Dĩa
             </a>
-            <div className="cursor-auto opacity-0 invisible absolute left-0 right-0 z-50 top-[100px] pt-5 h-[450px] group-hover:visible group-hover:opacity-100 transition ease-in-out duration-300">
-              <div className="w-full h-full bg-light"></div>
-            </div>
+            <Nhot />
           </li>
-          <li className="flex items-center h-full font-light cursor-pointer group">
+          <li className="flex items-center h-full font-light border-black border-solid cursor-pointer group hover:border-b-[3px] transition-all ease-linear">
             <a className="text-base font-semibold uppercase font-roboto lg:tracking-widest">
               Bình Ắc Quy
             </a>
-            <div className="cursor-auto opacity-0 invisible absolute left-0 right-0 z-50 top-[100px] pt-5 h-[450px] group-hover:visible group-hover:opacity-100 transition ease-in-out duration-300">
-              <div className="w-full h-full bg-light"></div>
-            </div>
+            <Nhot />
           </li>
         </ul>
         <a

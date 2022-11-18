@@ -47,10 +47,9 @@ export async function getStaticProps() {
           description
           detail
           id
-          images
+          image
           name
           originalPrice
-          productId
           publishedAt
           sale
           slug
@@ -59,7 +58,6 @@ export async function getStaticProps() {
       }
     `,
   });
-  console.log(data);
   return {
     props: { data },
   };
