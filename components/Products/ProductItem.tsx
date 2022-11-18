@@ -12,7 +12,7 @@ const ProductItem = () => {
     setImg1(type);
   };
   return (
-    <div className="flex flex-col relative mr-[5px] mb-[5px] min-h-[400px] hover:border-solid hover:border-2 hover:border-black">
+    <div className="flex font-cond tracking-wide flex-col relative mr-[5px] mb-[5px] min-h-[400px] hover:border-solid hover:border-2 hover:border-black">
       <div
         className="relative h-full"
         onMouseEnter={onMouseHandler.bind(null, true)}
@@ -45,14 +45,14 @@ const ProductItem = () => {
           objectPosition="center bottom"
         />
 
-        <span className="absolute z-50 bottom-0 left-2.5 bg-white px-2.5 pt-[3px] text-sm lg:text-base">
+        <span className="absolute z-50 bottom-0 font-roboto left-2.5 bg-white px-2.5 pt-[3px] text-sm lg:text-base">
           <span className="line-through text-light">90000$</span>
           <span className="ml-1 text-red">89990$</span>
         </span>
       </div>
       <div className="text-sm px-2.5 pt-2.5 pb-5 lg:text-base">
         <p className="">Swift Run Shoes </p>
-        <p className="text-light">Men`s Originals</p>
+        <p className="text-light">Men's Originals</p>
         <p className="text-light">
           <span>3 Color</span>
           <span className="text-black"> · </span>

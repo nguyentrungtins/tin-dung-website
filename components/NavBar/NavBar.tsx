@@ -60,7 +60,7 @@ const NavBar = () => {
         <div className="flex-1 flex justify-end h-[32px] ">
           <div className="flex py-1 pr-1.5 pl-3 bg-none lg:bg-gray-light">
             <input
-              className="hidden text-base border-none outline-none lg:flex placeholder:text-lg bg-gray-light"
+              className="hidden text-base border-none outline-none lg:flex placeholder:text-base bg-gray-light"
               type="text"
               placeholder="Search"
             />
