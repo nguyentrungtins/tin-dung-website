@@ -2,14 +2,11 @@ import Head from "next/head";
 import client from "../apolloClient";
 import NavBar from "../components/NavBar/NavBar";
 import HomePage from "../components/Pages/Home/Home";
-import { GraphQLRequest, gql } from "@apollo/client";
+import { gql } from "@apollo/client";
 import { Product, productInterface } from "../types";
-import ProductList from "../components/Products/ProductList";
+import { NextPage } from "next";
 
-export default function Home({ data }: Product) {
-  // console.log("data from Index: \n", typeof data);
-  const products = JSON.parse(data);
-  // console.log(products.products);
+const Home: NextPage<{ products: Product[] }> = ({ products }) => {
   return (
     <div>
       <Head>
@@ -20,16 +17,17 @@ export default function Home({ data }: Product) {
 
       <main>
         <NavBar></NavBar>
-        <HomePage products={products.products} />
+        <HomePage products={products} />
       </main>
 
       <footer></footer>
     </div>
   );
-}
+};
+export default Home;
 
 export async function getStaticProps() {
-  let { data }: productInterface = await client.query({
+  let { data } = await client.query({
     query: gql`
       query Products {
         products {
@@ -51,7 +49,9 @@ export async function getStaticProps() {
   });
   data = JSON.stringify(data);
 
+  const productData = JSON.parse(data);
+  const { products } = productData;
   return {
-    props: { data },
+    props: { products: products },
   };
 }

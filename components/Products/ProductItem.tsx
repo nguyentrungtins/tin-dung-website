@@ -1,12 +1,12 @@
 import Image from "next/legacy/image";
 // import img from "../../public/images/"
 import { useState } from "react";
+import { Product, productInterface } from "../../types";
 const myLoader = (url: string): string => {
   return url;
 };
 
-const ProductItem = ({ products }) => {
-  console.log(products);
+const ProductItem: NextPage<{ products: Product[] }> = ({ products }) => {
   const [img1, setImg1] = useState(false);
 
   const onMouseHandler = (type: boolean): void => {
