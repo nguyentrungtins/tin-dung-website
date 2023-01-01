@@ -12,7 +12,6 @@ const HomePage = ({ products }) => {
   return (
     <div className="px-1 pt-0 sm:px-[10%] sm:pt-[40px]">
       <Breadcrumb />
-
       <_Header />
       <FilterPanel />
       <ProductList products={products} />
