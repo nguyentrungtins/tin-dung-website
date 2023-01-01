@@ -1,15 +1,14 @@
 import ProductItem from "./ProductItem";
-const ProductList = () => {
+const ProductList = ({ products }) => {
+  // console.log("from ProductList", products);
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
+    <div>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {products &&
+          products.map((item, index) => {
+            return <ProductItem key={index} products={products}></ProductItem>;
+          })}
+      </div>
     </div>
   );
 };

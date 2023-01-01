@@ -5,7 +5,8 @@ const myLoader = (url: string): string => {
   return url;
 };
 
-const ProductItem = () => {
+const ProductItem = ({ products }) => {
+  console.log(products);
   const [img1, setImg1] = useState(false);
 
   const onMouseHandler = (type: boolean): void => {

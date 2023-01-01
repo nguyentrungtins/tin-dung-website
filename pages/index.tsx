@@ -1,35 +1,26 @@
 import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
-import { GraphQLRequest, gql } from "@apollo/client";
 import client from "../apolloClient";
-import type { NextPage } from "next";
 import NavBar from "../components/NavBar/NavBar";
 import HomePage from "../components/Pages/Home/Home";
+import { GraphQLRequest, gql } from "@apollo/client";
+import { Product, productInterface } from "../types";
+import ProductList from "../components/Products/ProductList";
 
-interface Products {
-  data: Object;
-}
-export default function Home({ data }: Products) {
-  console.log(data);
+export default function Home({ data }: Product) {
+  // console.log("data from Index: \n", typeof data);
+  const products = JSON.parse(data);
+  // console.log(products.products);
   return (
     <div>
       <Head>
         <title>Thảo Trang</title>
-        <meta
-          name="description"
-          content="Phụ Tùng Xe Máy Thaỏ Trang"
-        />
-        <link
-          rel="icon"
-          href="/images/Logo.png"
-        />
+        <meta name="description" content="Phụ Tùng Xe Máy Thaỏ Trang" />
+        <link rel="icon" href="/images/Logo.png" />
       </Head>
 
       <main>
         <NavBar></NavBar>
-
-        <HomePage />
+        <HomePage products={products.products} />
       </main>
 
       <footer></footer>
@@ -38,7 +29,7 @@ export default function Home({ data }: Products) {
 }
 
 export async function getStaticProps() {
-  const { data } = await client.query({
+  let { data }: productInterface = await client.query({
     query: gql`
       query Products {
         products {
@@ -58,6 +49,8 @@ export async function getStaticProps() {
       }
     `,
   });
+  data = JSON.stringify(data);
+
   return {
     props: { data },
   };
