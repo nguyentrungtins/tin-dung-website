@@ -12,7 +12,6 @@ const ProductItem: NextPage<{ products: Product }> = ({ products }) => {
   const [img1, setImg1] = useState(false);
   const imgUrl: string = products.image[0];
   const priceAfterSale: number = (products.actualPrice * products.sale) / 100;
-  console.log(imgUrl);
   const onMouseHandler = (type: boolean): void => {
     setImg1(type);
   };
