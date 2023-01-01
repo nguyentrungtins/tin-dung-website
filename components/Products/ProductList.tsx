@@ -3,7 +3,6 @@ import { Product } from "../../types";
 import { NextPage } from "next";
 
 const ProductList: NextPage<{ products: Product[] }> = ({ products }) => {
-  // console.log("from ProductList", products);
   return (
     <div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -15,4 +14,5 @@ const ProductList: NextPage<{ products: Product[] }> = ({ products }) => {
     </div>
   );
 };
+
 export default ProductList;
